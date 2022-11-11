@@ -1,14 +1,49 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/ddl/ddl",
+    "pages/course/course",
+    "pages/add/add",
+    "pages/remind/remind",
+    "pages/self/self",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "课程DDL",
     "navigationBarTextStyle":"black"
   },
-  "style": "v2",
+  "tabBar": {
+    "borderStyle":"white",
+    "list": [{
+      "pagePath": "pages/ddl/ddl",
+      "text": "课程DDL",
+      "iconPath": "img/课程DDL.png",
+      "selectedIconPath": "img/课程DDL1.png"
+     
+    },{
+      "pagePath": "pages/course/course",
+      "text": "课程表",
+      "iconPath": "img/课程表.png",
+      "selectedIconPath": "img/课程表1.png"
+    },{
+      "pagePath": "pages/add/add",
+      "text": "添加任务",
+      "iconPath": "img/添加任务.png",
+      "selectedIconPath": "img/添加任务1.png"
+    },{
+      "pagePath": "pages/remind/remind",
+      "text": "管理提醒",
+      "iconPath": "img/管理提醒.png",
+      "selectedIconPath": "img/管理提醒1.png"
+    },{
+      "pagePath": "pages/self/self",
+      "text": "个人中心",
+      "iconPath": "img/个人中心.png",
+      "selectedIconPath": "img/个人中心1.png"
+    }
+  ]
+  },
   "sitemapLocation": "sitemap.json"
 }

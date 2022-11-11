@@ -14,6 +14,11 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    token: wx.getStorageSync('token'),
+    userInfo: wx.getStorageSync('userInfo'),
+    student_id: wx.getStorageSync('student_id'),
+    password: wx.getStorageSync('password'),
+    avatarUrl: wx.getStorageSync('avatarUrl'),
+    nickName: wx.getStorageSync('nickName'),
   }
 })

@@ -1,19 +1,62 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #aaa;
-}
+ /*表单内容*/
+ .img{
+  position: relative;
+  margin-top: -200rpx; 
+  height: 400rpx;
+  width: 600rpx;
+ }
 
-.userinfo-avatar {
-  overflow: hidden;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.usermotto {
-  margin-top: 200px;
-}
+ .idLab { 
+  margin: 30rpx 30rpx 30rpx 10rpx; 
+  margin-top: 200rpx; 
+  color: black; 
+  font-size: 38rpx;
+  font-weight: 600;
+  font-family : 宋体;
+ } 
+ .idInput { 
+  text-align: center; 
+  margin-left: 50rpx;
+  margin-right: 50rpx; 
+  margin-top: 30rpx;
+  font-size: 31rpx;
+  font-weight: 1000;
+  font-family : 宋体;
+  height: 80rpx;
+  border-radius:40rpx;
+   border:2rpx solid #999999;
+ } 
+ .line { 
+  margin-top: 30rpx; 
+ } 
+ .passwordLab { 
+  margin: 30rpx 30rpx 30rpx 10rpx; 
+  color: black; 
+  font-size: 38rpx;
+  font-weight: 600;
+  font-family : 宋体;
+ } 
+ .passwordInput { 
+  text-align:center; 
+  margin-left: 50rpx;
+  margin-right: 44rpx; 
+  margin-top: 30rpx;
+  font-size: 31rpx;
+  font-weight: 1000;
+  font-family : 宋体;
+  height: 80rpx;
+  border-radius:40rpx;
+  border:2rpx solid #999999;
+ } 
+ /*按钮*/
+ .loginBtn{ 
+   background-color:rgb(116, 202, 0) ;
+   color:white; 
+   width: 90%; 
+   height: 100rpx;
+   margin-top: 120rpx; 
+   border-radius:40rpx;
+   font-size: 38rpx;
+   text-align: center;
+ }

@@ -1,0 +1,25 @@
+/* pages/self/self.wxss */
+.userinfo {
+  position: absolute;
+  display: flex;
+  top: 0rpx;
+  left: 0rpx;
+  color: #aaa;
+}
+.userinfo-avatar {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  width: 120rpx;
+  height: 120rpx;
+  top: 0rpx;
+  left: 0rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.userinfo-nickname{
+  position: absolute;
+  display: flex;
+  top: 1000rpx;
+  left: 1000rpx;
+}
