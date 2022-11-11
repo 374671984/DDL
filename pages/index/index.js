@@ -96,11 +96,12 @@ Page({
             icon: 'error',
             duration: 1500
           })
+
         }
       },
       fail: function (res) { 
         wx.showToast({
-          title: '服务器无响应',
+          title: '服务器开小差了',
           icon: 'error',
           duration: 5000
         })

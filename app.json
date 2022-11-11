@@ -15,33 +15,34 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
-    "borderStyle":"white",
+    "color": "#AAAAAA",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
     "list": [{
       "pagePath": "pages/ddl/ddl",
       "text": "课程DDL",
-      "iconPath": "img/课程DDL.png",
-      "selectedIconPath": "img/课程DDL1.png"
-     
+      "iconPath": "/img/课程DDL.png",
+      "selectedIconPath": "/img/课程DDL1.png"
     },{
       "pagePath": "pages/course/course",
       "text": "课程表",
-      "iconPath": "img/课程表.png",
-      "selectedIconPath": "img/课程表1.png"
+      "iconPath": "/img/课程表.png",
+      "selectedIconPath": "/img/课程表1.png"
     },{
       "pagePath": "pages/add/add",
       "text": "添加任务",
-      "iconPath": "img/添加任务.png",
-      "selectedIconPath": "img/添加任务1.png"
+      "iconPath": "/img/添加任务.png",
+      "selectedIconPath": "/img/添加任务1.png"
     },{
       "pagePath": "pages/remind/remind",
       "text": "管理提醒",
-      "iconPath": "img/管理提醒.png",
-      "selectedIconPath": "img/管理提醒1.png"
+      "iconPath": "/img/管理提醒.png",
+      "selectedIconPath": "/img/管理提醒1.png"
     },{
       "pagePath": "pages/self/self",
       "text": "个人中心",
-      "iconPath": "img/个人中心.png",
-      "selectedIconPath": "img/个人中心1.png"
+      "iconPath": "/img/个人中心.png",
+      "selectedIconPath": "/img/个人中心1.png"
     }
   ]
   },

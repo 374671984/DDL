@@ -54,7 +54,7 @@
    background-color:rgb(116, 202, 0) ;
    color:white; 
    width: 90%; 
-   height: 100rpx;
+   height: 100%;
    margin-top: 120rpx; 
    border-radius:40rpx;
    font-size: 38rpx;

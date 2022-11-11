@@ -20,5 +20,6 @@ App({
     password: wx.getStorageSync('password'),
     avatarUrl: wx.getStorageSync('avatarUrl'),
     nickName: wx.getStorageSync('nickName'),
+    signature: wx.getStorageSync('signature'),
   }
 })

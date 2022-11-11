@@ -1,9 +1,15 @@
 /* pages/self/self.wxss */
+.background{
+  position: fixed;
+  height: 30%;
+  width: 100%;
+  z-index: -1;  /*让图片置于最底层*/
+}
 .userinfo {
   position: absolute;
   display: flex;
-  top: 0rpx;
-  left: 0rpx;
+  top: 20rpx;
+  left: 20rpx;
   color: #aaa;
 }
 .userinfo-avatar {
@@ -20,6 +26,28 @@
 .userinfo-nickname{
   position: absolute;
   display: flex;
-  top: 1000rpx;
-  left: 1000rpx;
+  font-size: 38rpx;
+  top: 25rpx;
+  left: 170rpx;
+  color: #E0F5E7;
+}
+.signature{
+  position: absolute;
+  display: flex;
+  font-size: 35rpx;
+  width: 300rpx;
+  top: 85rpx;
+  left: 170rpx;
+  color: #E0F5E7;
+}
+.attendance{
+  background-color: #E0F5E7;
+  color: rgb(63, 161, 98);
+  width: 160rpx; 
+   height: 100%;
+   top: 40rpx; 
+   left: 380rpx;
+   border-radius:40rpx;
+   font-size: 32rpx;
+   text-align: center;
 }

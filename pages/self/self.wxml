@@ -1,24 +1,13 @@
 <!--pages/self/self.wxml-->
+<image class="background" src="/img/个人中心背景图.png"></image>
 <view class="container">
   <view class="userinfo">
-    <block wx:if="{{canIUseOpenData}}">
-      <view class="userinfo-avatar" bindtap="bindViewTap">
-        <open-data type="userAvatarUrl"></open-data>
-      </view>
-      <open-data type="userNickName"></open-data>
-    </block>
-    <block wx:elif="{{!hasUserInfo}}">
-      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
-    </block>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{nickName}}</text>
+      <input class="signature" placeholder="好好学习，天天向上" bindinput="getSignature" value="{{signature}}"/>
+      <button class="attendance" bindtap="attendance">签到</button>
   </view>
-</view>
 
-<view class="power" wx:key="title" wx:for="{{powerList}}" wx:for-item="power">
-
+  <view class="power" wx:key="title" wx:for="{{powerList}}" wx:for-item="power">
+  </view>
 </view>
