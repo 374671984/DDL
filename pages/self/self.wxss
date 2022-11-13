@@ -40,14 +40,3 @@
   left: 170rpx;
   color: #E0F5E7;
 }
-.attendance{
-  background-color: #E0F5E7;
-  color: rgb(63, 161, 98);
-  width: 160rpx; 
-   height: 100%;
-   top: 40rpx; 
-   left: 380rpx;
-   border-radius:40rpx;
-   font-size: 32rpx;
-   text-align: center;
-}

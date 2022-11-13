@@ -5,9 +5,9 @@
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{nickName}}</text>
       <input class="signature" placeholder="好好学习，天天向上" bindinput="getSignature" value="{{signature}}"/>
-      <button class="attendance" bindtap="attendance">签到</button>
   </view>
 
-  <view class="power" wx:key="title" wx:for="{{powerList}}" wx:for-item="power">
+  <view class="selfTab" wx:key="selfTab" wx:for="{{selfList}}" wx:for-item="selfTab">
+    <view class=""></view>
   </view>
 </view>

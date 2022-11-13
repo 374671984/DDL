@@ -17,13 +17,9 @@ Page({
         url: '../ddl/ddl'
       })
     }
-    this.setData({
-      userInfo:app.globalData.userInfo
-    })
   },
   getID(event){
     let id = event.detail.value
-    //console.log(id)
     this.setData({
       student_id:id
     })
@@ -45,11 +41,11 @@ Page({
           })
           app.globalData.userInfo = res.userInfo
           wx.setStorageSync('userInfo',res.userInfo)
-          console.log(res.userInfo)
           app.globalData.avatarUrl = res.userInfo.avatarUrl
           wx.setStorageSync('avatarUrl',res.userInfo.avatarUrl)
           app.globalData.nickName = res.userInfo.nickName
           wx.setStorageSync('nickName',res.userInfo.nickName)
+          console.log(res.userInfo)
           console.log(app.globalData.userInfo)
           console.log(app.globalData.avatarUrl)
         },
@@ -58,33 +54,35 @@ Page({
         }
       })
     }
+    var that = this
     wx.request({
-      url: 'http://172.17.173.97:8080/api/user/login',
+      url: 'https://192.168.1.148/hello',
       data: {
         student_id:this.data.student_id,
         password:this.data.password,
       },
       header: {
-       "Content-Type": "application/x-www-form-urlencoded" ,//用于post
+       "Content-Type": "application/json" ,//用于post
        //"Authorization": "Bearer {{your_token}}",
       },
       method: 'POST',
       success: function (res) {
         console.log("res", res); 
-        if(res.data.status == "200"){
+        if(res.data.password){
           //console.log(res.data.data.token)
-          app.globalData.token = res.data.data.token
+          // app.globalData.token = res.data.data.token
           //console.log(app.globalData.token)
-          wx.setStorageSync('token',res.data.data.token)
-          app.globalData.student_id = student_id
-          wx.setStorageSync('student_id',student_id)
-          app.globalData.password = password
-          wx.setStorageSync('password',password)
+          // wx.setStorageSync('token',res.data.data.token)
+          app.globalData.student_id = that.data.student_id
+          wx.setStorageSync('student_id',that.data.student_id)
+          app.globalData.password = that.data.password
+          wx.setStorageSync('password',that.data.password)
           wx.showToast({
             title: '登陆中',
             icon: 'success',
             duration: 15000
           })
+          console.log("登录成功")
           //登录成功跳转页面
           wx.switchTab({
             url: '../ddl/ddl'
@@ -96,7 +94,7 @@ Page({
             icon: 'error',
             duration: 1500
           })
-
+          console.log("账号或密码错误")
         }
       },
       fail: function (res) { 
@@ -105,6 +103,7 @@ Page({
           icon: 'error',
           duration: 5000
         })
+        console.log("服务器开小差了")
       },
     })
     
