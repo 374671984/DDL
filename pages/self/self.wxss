@@ -1,4 +1,5 @@
 /* pages/self/self.wxss */
+/* 绿色的背景图 */
 .background{
   position: fixed;
   height: 30%;
@@ -12,31 +13,99 @@
   left: 20rpx;
   color: #aaa;
 }
+/* 头像 */
 .userinfo-avatar {
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  overflow: hidden;
+  width: 120rpx;
+  height: 120rpx;
+  margin: 20rpx;
+}
+.avatar-wrapper{
   position: relative;
   display: flex;
   overflow: hidden;
   width: 120rpx;
   height: 120rpx;
-  top: 0rpx;
-  left: 0rpx;
   margin: 20rpx;
   border-radius: 50%;
+  opacity:0;
+  z-index: 2
 }
+/* 昵称 */
 .userinfo-nickname{
   position: absolute;
   display: flex;
   font-size: 38rpx;
+  width: 600rpx;
   top: 25rpx;
   left: 170rpx;
-  color: #E0F5E7;
+  color: white;
 }
+/* 提交 */
+.submit{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  font-size: 35rpx;
+  align-items: center;
+  justify-content: center;
+  width: 160rpx;
+  height: 80rpx;
+  top: 20rpx;
+  left: 400rpx;
+  background-color: green;
+  color: white;
+}
+/* 签名 */
 .signature{
-  position: absolute;
+  position: relative;
   display: flex;
   font-size: 35rpx;
-  width: 300rpx;
+  width: 600rpx;
   top: 85rpx;
-  left: 170rpx;
-  color: #E0F5E7;
+  left: -150rpx;
+  color: white;
+}
+/* 文本框内容 */
+.selfTab {
+  position : relative;
+  top: 130rpx;
+  margin-top: 30rpx;
+  border-radius: 5px;
+  background-color: #F6F6F6;
+  width: 93%;
+  padding-bottom: 1rpx;
+}
+.selfTab_info{
+  display: flex;
+  padding: 30rpx 25rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.selfTab_text{
+  display: flex;
+  flex-direction: row;
+}
+
+.selfTab_text_title {
+  margin-bottom: 10rpx;
+  font-weight: 400;
+  font-size: 35rpx;
+  margin-left: 15rpx;
+  margin-top: 10rpx;
+}
+/* 小图标 */
+.selfTab_img{
+  margin-bottom: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.selfTab_info_less {
+  width: 30rpx;
+  height: 30rpx;
+  transform: rotate(0deg);
 }

@@ -1,0 +1,23 @@
+{
+  "name": "ddl",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "dependencies": {
+    "@vant/weapp": "^1.10.6",
+    "jsbn": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wordhardhhh/ruanjiangongc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wordhardhhh/ruanjiangongc/issues"
+  },
+  "homepage": "https://github.com/wordhardhhh/ruanjiangongc#readme"
+}

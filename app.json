@@ -1,50 +1,77 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/ddl/ddl",
     "pages/course/course",
     "pages/add/add",
     "pages/remind/remind",
     "pages/self/self",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/forUs/forUs",
+    "pages/self/forUs/forUs",
+    "pages/setting/setting",
+    "pages/allTask/allTask"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "课程DDL",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#AAAAAA",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
-    "list": [{
-      "pagePath": "pages/ddl/ddl",
-      "text": "课程DDL",
-      "iconPath": "/img/课程DDL.png",
-      "selectedIconPath": "/img/课程DDL1.png"
-    },{
-      "pagePath": "pages/course/course",
-      "text": "课程表",
-      "iconPath": "/img/课程表.png",
-      "selectedIconPath": "/img/课程表1.png"
-    },{
-      "pagePath": "pages/add/add",
-      "text": "添加任务",
-      "iconPath": "/img/添加任务.png",
-      "selectedIconPath": "/img/添加任务1.png"
-    },{
-      "pagePath": "pages/remind/remind",
-      "text": "管理提醒",
-      "iconPath": "/img/管理提醒.png",
-      "selectedIconPath": "/img/管理提醒1.png"
-    },{
-      "pagePath": "pages/self/self",
-      "text": "个人中心",
-      "iconPath": "/img/个人中心.png",
-      "selectedIconPath": "/img/个人中心1.png"
-    }
-  ]
+    "list": [
+      {
+        "pagePath": "pages/ddl/ddl",
+        "text": "课程DDL",
+        "iconPath": "/img/课程DDL.png",
+        "selectedIconPath": "/img/课程DDL1.png"
+      },
+      {
+        "pagePath": "pages/course/course",
+        "text": "课程表",
+        "iconPath": "/img/课程表.png",
+        "selectedIconPath": "/img/课程表1.png"
+      },
+      {
+        "pagePath": "pages/add/add",
+        "text": "添加任务",
+        "iconPath": "/img/添加任务.png",
+        "selectedIconPath": "/img/添加任务1.png"
+      },
+      {
+        "pagePath": "pages/remind/remind",
+        "text": "管理提醒",
+        "iconPath": "/img/管理提醒.png",
+        "selectedIconPath": "/img/管理提醒1.png"
+      },
+      {
+        "pagePath": "pages/self/self",
+        "text": "个人中心",
+        "iconPath": "/img/个人中心.png",
+        "selectedIconPath": "/img/个人中心1.png"
+      }
+    ]
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {
+    "van-nav-bar": "./miniprogram/miniprogram_npm/@vant/weapp/nav-bar/index",
+    "van-datetime-picker": "./miniprogram/miniprogram_npm/@vant/weapp/datetime-picker/index",
+    "van-picker": "./miniprogram/miniprogram_npm/@vant/weapp/picker/index",
+    "van-field": "./miniprogram/miniprogram_npm/@vant/weapp/field/index",
+    "van-popup": "./miniprogram/miniprogram_npm/@vant/weapp/popup/index",
+    "van-calendar": "./miniprogram/miniprogram_npm/@vant/weapp/calendar/index",
+    "van-cell": "./miniprogram/miniprogram_npm/@vant/weapp/cell/index",
+    "van-switch": "./miniprogram/miniprogram_npm/@vant/weapp/switch/index",
+    "van-radio": "./miniprogram/miniprogram_npm/@vant/weapp/radio/index",
+    "van-radio-group": "./miniprogram/miniprogram_npm/@vant/weapp/radio-group/index",
+    "van-swipe-cell": "./miniprogram/miniprogram_npm/@vant/weapp/swipe-cell/index",
+    "van-tabbar": "./miniprogram/miniprogram_npm/@vant/weapp/tabbar/index",
+    "van-tabbar-item": "./miniprogram/miniprogram_npm/@vant/weapp/tabbar-item/index",
+    "van-sidebar": "./miniprogram/miniprogram_npm/@vant/weapp/sidebar/index",
+    "van-sidebar-item": "./miniprogram/miniprogram_npm/@vant/weapp/sidebar-item/index"
+  }
 }

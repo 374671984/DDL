@@ -1,66 +1,145 @@
 // pages/add/add.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    //课程名
+    Course: '',
+    //任务名
+    taskName: '',
+    //任务备注
+    taskRemark: '',
+    //日期
+    date: '',
+    //日历弹出层，默认隐藏
+    show: false,
+    //是否设置提醒
+    isChecked_warn: false,
+    //是否同步
+    isChecked_syn: false,
+    //任务类型，默认为课程作业
+    radio: '1',
+    powerList: [],
+    type:'',
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
+  // 获取课程名称
+  getCourse(e) {
+    this.setData({
+      Course: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  //获取任务名称
+  getTaskname(e) {
+    this.setData({
+      taskName: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  //获取任务备注
+  getTaskremark(e) {
+    this.setData({
+      taskRemark: e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
+  onDisplay() {
+    this.setData({ show: true });
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
+  onClose() {
+    this.setData({ show: false });
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
+  formatDate(date) {
+    date = new Date(date);
+    return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
+  onConfirm(event) {
+    this.setData({
+      show: false,
+      date: this.formatDate(event.detail),
+    });
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
+  onChange_warn({ detail }) {
+    // 需要手动对 checked 状态进行更新
+    this.setData(
+      {
+        checked: detail,
+        isChecked_warn: detail.value
+      }
+    )
+  },
+  onChange_syn({ detail }) {
+    // 需要手动对 checked 状态进行更新
+    this.setData(
+      {
+        checked: detail,
+        isChecked_syn: detail.value
+      }
+    )
+  },
+  onChange1(event) {
+    this.setData({
+      radio: event.detail
+    });
+  },
+  submit() {
+    switch (this.data.radio) {
+      case "1":
+        this.setData({
+          type: '课程作业'
+        });
+        console.log(this.data.radio);
+        break;
+      case "2":
+        this.setData({
+          type: '实验'
+        });
+        break;
+      case "3":
+        this.setData({
+          type: '实践作业'
+        });
+        break;
+    }
+    if (this.data.Course == "" || this.data.taskName == "" || this.data.date == "") {
+      wx.showToast({
+        icon: 'error',
+        title: '请输入完整数据'
+      })
+    } else {
+      //需要同步的情况
+      if (this.data.isChecked_syn == true) {
+        wx.request({
+          url: '接口地址',
+          header: { 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' },
+          data: {
+            Course: this.data.Course,
+            taskName: this.data.taskName,
+            taskRemark: this.data.taskRemark,
+            deadline: this.data.date,
+            type: this.data.type //1为课程作业，2为实验，3为实践作业
+          },
+          method: 'POST',
+          success: res => {
+            if (res.data == 'sucess') {
+              wx.showToast({
+                title: '新增成功',
+              })
+            } else {
+              wx.showToast({
+                title: '新增失败',
+                icon: 'error'
+              })
+            }
+          }
+        })
+      } else {//不需要同步的情况
+        this.data.powerList.push({
+          type: this.data.type,
+          deadline: this.data.date,
+          Course: this.data.Course,
+          taskName: this.data.taskName,
+          taskRemark: this.data.taskRemark
+        });
+        wx.setStorageSync('todo_list', this.data.powerList);
+      }
+    }
   }
-})
+});
+
+

@@ -1,1 +1,76 @@
 /* pages/add/add.wxss */
+.title {
+  text-align: center;
+  margin-top: 6%;
+  margin-bottom: 6%;
+  font-size: larger;
+}
+
+/* 输入框 */
+.inputview {
+  display: flex;
+  /* background-color:#f2f2f7; */
+  margin-left: 100rpx;
+  width: 75%;
+  height: 70rpx;
+  align-items: center;
+  font-size: 33rpx;
+  margin-top: 3%;
+  border-radius: 20rpx;
+  border: 2rpx solid #999999;
+}
+
+.inputview1 {
+  display: flex;
+  /* background-color:#f2f2f7; */
+  margin-left: 100rpx;
+  height: 120rpx;
+  width: 75%;
+  margin-top: 3%;
+  font-size: 33rpx;
+  align-items: center;
+  border-radius: 25rpx;
+  border: 2rpx solid #999999;
+}
+
+.inputText {
+  padding-left: 20rpx;
+}
+
+.calendar {
+  margin-top: 3%;
+  margin-left: 100rpx;
+  width: 75%;
+  border-radius: 25rpx;
+  align-items: center;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+  border: 2rpx solid #999999;
+  /* border-radius: 20rpx; */
+}
+
+.radio {
+  margin-left: 100rpx;
+  margin-top: 3%;
+}
+
+.radio_text {
+  margin-bottom: 3%;
+}
+
+.button {
+  margin-top: 3%;
+  margin-left: 140rpx;
+  height: 20%;
+  width: 65%;
+}
+
+button {
+  border-radius: 35rpx;
+  font-size: larger;
+}
+
+.lab {
+  width: 80%;
+  padding-left: 20rpx;
+}

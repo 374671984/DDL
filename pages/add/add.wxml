@@ -1,2 +1,47 @@
 <!--pages/add/add.wxml-->
-<text>pages/add/add.wxml</text>
+<navigator >测试用（跳转任务页面）</navigator>
+<view class="title">添加新任务</view>
+<view class="inputview">
+  <input class="inputText" placeholder="课程名称" bindinput="getCourse" />
+</view>
+<view class="inputview">
+  <input class="inputText" placeholder="任务名称" bindinput="getTaskname" />
+</view>
+<view class="inputview1">
+  <input class="inputText" placeholder="输入任务备注" bindinput="getTaskremark" />
+</view>
+<view class="calendar">
+  <van-cell title="截止日期" value="{{ date }}" bind:click="onDisplay" />
+  <van-calendar show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" color="#07c160" />
+</view>
+<view class="inputview">
+  <view class="lab">
+    <label>任务提醒</label>
+  </view>
+  <view>
+    <switch type="checkebox" checked="{{isChecked_warn}}" bind:change="onChange_warn"></switch>
+  </view>
+</view>
+<view class="inputview">
+  <view class="lab">
+    <label>同步给同课程其他学生</label>
+  </view>
+  <view>
+    <switch type="checkebox" checked="{{isChecked_syn}}" bind:change="onChange_syn"></switch>
+  </view>
+</view>
+
+<view class="radio">
+  <view class="radio_text">
+    <text>任务类型</text>
+  </view>
+  <van-radio-group value="{{ radio }}" bind:change="onChange1" direction="horizontal">
+    <van-radio name="1" shape="square">课程作业</van-radio>
+    <van-radio name="2" shape="square">实验</van-radio>
+    <van-radio name="3" shape="square">实践作业</van-radio>
+  </van-radio-group>
+</view>
+
+<view class="button">
+  <button type="primary" bindtap="submit">创建任务</button>
+</view>
