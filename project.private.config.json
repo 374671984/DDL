@@ -28,9 +28,16 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/allTask/allTask",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
   },
-  "libVersion": "2.27.1"
+  "libVersion": "2.27.3"
 }

@@ -1,4 +1,5 @@
 // pages/add/add.js
+const app = getApp()
 Page({
   data: {
     //课程名
@@ -17,15 +18,35 @@ Page({
     isChecked_syn: false,
     //任务类型，默认为课程作业
     radio: '1',
-    powerList: [],
+    ddlList: [],
     type:'',
   },
-  // 获取课程名称
-  getCourse(e) {
-    this.setData({
-      Course: e.detail.value
+  onLoad(){
+    if(app.globalData.ddl_list){
+      this.setData({
+        ddlList : app.globalData.ddl_list
+      })
+    }
+    console.log(app.globalData.ddl_list)
+  },
+  gotoAllTask(){
+    wx.navigateTo({
+      url: '/pages/allTask/allTask',
     })
   },
+  // 获取课程名称
+  onConfirmCourse(event) {
+    const { picker, value, index } = event.detail;
+    this.setData({
+      Course: value
+    });
+    this.setData({ showPop: false });
+  },
+
+  onCancelCourse() {
+    this.setData({ showPop: false });
+  },
+
   //获取任务名称
   getTaskname(e) {
     this.setData({
@@ -74,8 +95,19 @@ Page({
   },
   onChange1(event) {
     this.setData({
-      radio: event.detail
+      radio: event.detail.value
     });
+  },
+  //课程选择弹出层
+  showPopup() {
+    this.setData({
+      courseList: ['软件工程', '计算机操作系统', '计算机图形学', '嵌入式系统', '软件体系结构', '人工智能', '虚拟现实', '机器学习', '形式与政策', 'Linux操作系统实践', '软件工程实践']//测试用数据
+    });
+    this.setData({ showPop: true });
+  },
+  // 课程选择关闭
+  onClosePop() {
+    this.setData({ show: false });
   },
   submit() {
     switch (this.data.radio) {
@@ -108,35 +140,42 @@ Page({
           url: '接口地址',
           header: { 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8' },
           data: {
-            Course: this.data.Course,
-            taskName: this.data.taskName,
-            taskRemark: this.data.taskRemark,
-            deadline: this.data.date,
-            type: this.data.type //1为课程作业，2为实验，3为实践作业
+            status: 0,
+            TableName: this.data.Course + "",
+            TaskID: this.data.taskName,
+            Content: this.data.taskRemark,
+            DDL: this.data.date,
+            Type: this.data.type //1为课程作业，2为实验，3为实践作业
           },
           method: 'POST',
           success: res => {
             if (res.data == 'sucess') {
               wx.showToast({
-                title: '新增成功',
+                title: '同步创建成功',
               })
             } else {
               wx.showToast({
-                title: '新增失败',
+                title: '同步创建失败',
                 icon: 'error'
               })
             }
           }
         })
       } else {//不需要同步的情况
-        this.data.powerList.push({
+        this.data.ddlList.push({
           type: this.data.type,
           deadline: this.data.date,
           Course: this.data.Course,
           taskName: this.data.taskName,
           taskRemark: this.data.taskRemark
         });
-        wx.setStorageSync('todo_list', this.data.powerList);
+        wx.showToast({
+          title: '创建成功',
+          icon: 'error'
+        })
+        console.log(this.data.ddlList)
+        app.globalData.ddl_list = this.data.ddlList
+        wx.setStorageSync('ddl_list', this.data.ddlList);
       }
     }
   }

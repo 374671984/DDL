@@ -1,4 +1,4 @@
-// pages/forUs/forUs.js
+// pages/self/setting/setting.js
 Page({
 
   /**
@@ -12,20 +12,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    wx.showToast({
+      title: '开发人员说你好',
+      duration: 2000,
+    })
   },
+onShow(){
 
+},
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
 
   },
 

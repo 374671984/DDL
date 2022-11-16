@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="login"> 
-    <image class="img" src="/img/登录.png"></image>
+    <image class="img" src="/img/login.png"></image>
     <!--账号-->
     <view><label class="idLab">学号:</label> </view>
     <view><input class="idInput" placeholder="请输入学号" bindinput="getID" /> </view>

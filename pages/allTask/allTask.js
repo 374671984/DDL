@@ -1,11 +1,28 @@
 // pages/allTask/allTask.js
+const app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    type_list:[{
+      showItem: false,
+      type: "课程作业"
+    },{
+      showItem: false,
+      type: "实验"
+    },{
+      showItem: false,
+      type: "实践作业"
+    }],
+    ddlList: app.globalData.ddl_list,
+    course:'',
+    taskname:'',
+    taskremark: '',
+    date: '',
+    type:'',
+    type_index: '',
+    course_index: '',
   },
 
   /**
@@ -14,53 +31,56 @@ Page({
   onLoad(options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
+  onShow(){
+    this.setData({
+      ddlList: app.globalData.ddl_list
+  })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
+  // 点击三种类型的函数
+  onClick_allTask_type(e){
+    console.log(e.currentTarget.dataset.typeindex)
+    this.setData({
+      type_index : e.currentTarget.dataset.typeindex
+    })
+    const type_list = this.data.type_list
+    type_list[this.data.type_index].showItem = !type_list[this.data.type_index].showItem
+    this.setData({
+      type_list
+    })
+    console.log(this.data.type_list)
+    console.log(this.data.type_index)
   },
+// 点击类型里面的课程的跳转函数
+onClick_allTask_item(e){
+   this.setData({
+    item_index : e.currentTarget.dataset.itemindex,
+    course : e.currentTarget.dataset.course,
+    taskname : e.currentTarget.dataset.taskname,
+    taskremark : e.currentTarget.dataset.taskremark,
+    date : e.currentTarget.dataset.deadline,
+    type : e.currentTarget.dataset.type,
+   }) 
+   app.globalData.course = this.data.course
+   app.globalData.taskname = this.data.taskname
+   app.globalData.taskremark = this.data.taskremark
+   app.globalData.deadline = this.data.date
+   app.globalData.type = this.data.type
+   app.globalData.index = this.data.item_index
+   console.log(this.data.item_index)
+   console.log(e.currentTarget.dataset.itemindex)
+   console.log(app.globalData.course)
+   console.log(app.globalData.taskname)
+   console.log(app.globalData.taskremark)
+   console.log(app.globalData.deadline)
+   console.log(app.globalData.type)
+   console.log(app.globalData.index)
+   wx.navigateTo({
+     url: '/pages/edit/edit',
+   })
+}
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
 
-  },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
 
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
+ 
 })

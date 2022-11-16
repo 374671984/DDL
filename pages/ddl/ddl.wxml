@@ -1,2 +1,43 @@
 <!--pages/ddl/ddl.wxml-->
-<text>pages/ddl/ddl.wxml</text>
+<!-- tabbar显示消息同步 -->
+<!-- <van-tabbar active="{{ active }}" bind:change="onChange">
+  <van-tabbar-item icon="search" dot="{{syn}}"
+  bindtap="synchronize">同步任务</van-tabbar-item>
+</van-tabbar> -->
+<!-- 日历部分 -->
+<view class="main">
+  <calendar bind:change="dateChange" spot="{{spot}}" />
+</view>
+<!-- 侧边栏实现同步任务提示框 -->
+<view class="colomn">
+<van-sidebar active-key="{{ active}}">
+  <van-sidebar-item title="同步任务" dot="{{syn}}" bindtap="synchronize"/>
+</van-sidebar>
+<navigator class="more" url="../allTask/allTask">
+  <text>所有任务</text>
+  <text style="padding-left: 300rpx;">></text>
+</navigator>
+</view>
+
+<!-- 任务展示部分 -->
+<block wx:if="{{ ddlList.length }}">
+  <view class="todos">
+    <view data-ddl="{{index}}" wx:for="{{ddlList}}" wx:key="index" wx:for-item="value" data-Course="{{value.Course}}"data-type="{{value.type}}" 
+    data-deadline="{{value.deadline}}"  
+    data-taskName="{{value.taskName}}" data-taskRemark="{{value.taskRemark}}"  data-index="{{ index }}" bindtap="pass">
+      <navigator url="../edit/edit" class="item" >
+        <view class="type">{{value.type}}</view>
+        <view>截止日期：{{value.deadline}}</view>
+        <view>课程名称：{{value.Course}}</view>
+        <view>任务名称：{{value.taskName}}</view>
+        <view>任务备注: {{value.taskRemark}}</view>
+      </navigator>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view class="empty">
+    <text class="title">Congratulations!</text>
+    <text class="content">There's no more work left.</text>
+  </view>
+</block>

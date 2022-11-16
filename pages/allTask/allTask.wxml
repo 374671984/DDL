@@ -1,2 +1,101 @@
 <!--pages/allTask/allTask.wxml-->
-<text>pages/allTask/allTask.wxml</text>
+<view class="container">
+  <view class="allTask_type" wx:for="{{type_list}}" wx:key="ddlTask" wx:for-item="type">
+    <view class="allTask_type_info" data-typeindex="{{index}}" bindtap="onClick_allTask_type">
+      <!-- 绘制三种类型 -->
+      <!-- 课程作业类型 -->
+      <view class="type_course_all">
+        <view wx:if="{{type.type === '课程作业'}}" class="type_course_info">
+          <view class="type_course">{{type.type}}</view>
+          <image wx:if="{{type.showItem}}" class="type_img_down" src="/img/arrow.svg"></image>
+          <image wx:if="{{!type.showItem}}" class="type_img_right" src="/img/arrow.svg"></image>
+        </view>
+      </view>
+      <!-- 实验类型 -->
+      <view class="type_experiment_all">
+        <view wx:if="{{type.type === '实验'}}" class="type_experiment_info">
+          <view class="type_experiment">{{type.type}}</view>
+          <image wx:if="{{type.showItem}}" class="type_img_down" src="/img/arrow.svg"></image>
+          <image wx:if="{{!type.showItem}}" class="type_img_right" src="/img/arrow.svg"></image>
+        </view>
+      </view>
+      <!-- 实践作业类型 -->
+      <view class="type_practice_all">
+        <view wx:if="{{type.type === '实践作业'}}" class="type_practice_info">
+          <view class="type_practice">{{type.type}}</view>
+          <image wx:if="{{type.showItem}}" class="type_img_down" src="/img/arrow.svg"></image>
+          <image wx:if="{{!type.showItem}}" class="type_img_right" src="/img/arrow.svg"></image>
+        </view>
+      </view>
+    </view>
+
+    <!-- 点击“课程作业”后显示相应的课程ddl -->
+    <view wx:if="{{type.showItem}}">
+      <view wx:if="{{type.type === '课程作业'}}">
+        <view class="allTask_item" wx:for="{{ddlList}}" wx:key="ddlTask" wx:for-item="item">
+          <view class="line"></view>
+          <view class="allTask_item_info" data-itemindex="{{index}}" bindtap="onClick_allTask_item" data-course="{{item.Course}}" data-taskname="{{item.taskName}}" data-taskremark="{{item.taskRemark}}" data-deadline="{{item.deadline}}" data-type="{{item.type}}">
+            <!-- 将数组里面的课程作业绘制出来 -->
+            <view wx:if="{{item.type === '课程作业'}}">
+              <view class="item_course">
+                <view class="item_course_contain">
+                  <view class="course_name">{{item.Course}}</view>
+                  <view class="item_course_item">
+                    <view class="task_name">{{item.taskName}}</view>
+                    <view class="deadline">{{item.deadline}}</view>
+                  </view>
+                </view>
+                <image class="item_type_img_right" src="/img/arrow.svg"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 点击“实验”后显示相应的课程ddl -->
+      <view wx:if="{{type.type === '实验'}}">
+        <view class="allTask_item" wx:for="{{ddlList}}" wx:key="ddlTask" wx:for-item="item">
+        <view class="line"></view>
+        <view class="allTask_item_info" data-itemindex="{{index}}" bindtap="onClick_allTask_item" data-course="{{item.Course}}" data-taskname="{{item.taskName}}" data-taskremark="{{item.taskRemark}}" data-deadline="{{item.deadline}}" data-type="{{item.type}}">
+        <!-- 将数组里面的实验绘制出来 -->
+          <view wx:if="{{item.type === '实验'}}">
+            <view class="item_experiment">
+              <view class="item_experiment_contain">
+                  <view class="experiment_name">{{item.Course}}</view>
+                  <view class="item_experiment_item">
+                    <view class="task_name">{{item.taskName}}</view>
+                    <view class="deadline">{{item.deadline}}</view>
+                  </view>
+              </view>
+              <image class="item_type_img_right" src="/img/arrow.svg"></image>
+            </view>
+          </view>
+        </view>
+        </view>
+      </view>
+      <!-- 点击“实践作业”后显示相应的课程ddl -->
+      <view wx:if="{{type.type === '实践作业'}}">
+        <view class="allTask_item" wx:for="{{ddlList}}" wx:key="ddlTask" wx:for-item="item">
+        <view class="line"></view>
+        <view class="allTask_item_info" data-itemindex="{{index}}" bindtap="onClick_allTask_item" data-course="{{item.Course}}" data-taskname="{{item.taskName}}" data-taskremark="{{item.taskRemark}}" data-deadline="{{item.deadline}}" data-type="{{item.type}}">
+          <!-- 将数组里面的实践作业绘制出来 -->
+          <view wx:if="{{item.type === '实践作业'}}">
+            <view class="item_practice">
+              <view class="item_practice_contain">
+                  <view class="practice_name">{{item.Course}}</view>
+                  <view class="item_practice_item">
+                    <view class="task_name">{{item.taskName}}</view>
+                    <view class="deadline">{{item.deadline}}</view>
+                  </view>
+              </view>
+              <image class="item_type_img_right" src="/img/arrow.svg"></image>
+            </view>
+          </view>
+        </view>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+</view>
+

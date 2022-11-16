@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "calendar": "/components/calendar/calendar"
+  },
+  "navigationBarBackgroundColor": "#74CA00",
+  "navigationBarTitleText": "任务清单",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "light"
 }

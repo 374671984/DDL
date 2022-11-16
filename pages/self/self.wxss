@@ -42,9 +42,9 @@
   width: 600rpx;
   top: 25rpx;
   left: 170rpx;
-  color: white;
+  color: black;
 }
-/* 提交 */
+/* 确定按钮 */
 .submit{
   position: relative;
   display: flex;
@@ -58,6 +58,7 @@
   left: 400rpx;
   background-color: green;
   color: white;
+  z-index: 2;
 }
 /* 签名 */
 .signature{
@@ -67,7 +68,7 @@
   width: 600rpx;
   top: 85rpx;
   left: -150rpx;
-  color: white;
+  color: black;
 }
 /* 文本框内容 */
 .selfTab {
@@ -104,7 +105,7 @@
   width: 60rpx;
   height: 60rpx;
 }
-.selfTab_info_less {
+.selfTab_info_right {
   width: 30rpx;
   height: 30rpx;
   transform: rotate(0deg);

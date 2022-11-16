@@ -1,5 +1,8 @@
 <!--pages/self/self.wxml-->
-<image class="background" src="/img/个人中心背景图.png"></image>
+<view>
+  <image class="background" src="/img/selfBK.png"></image>
+</view>
+
 <view class="container">
   <view class="userinfo">
     <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
@@ -18,7 +21,7 @@
         <image class="selfTab_img" src="/img/{{selfTab.img}}"></image>
         <view class="selfTab_text_title">{{selfTab.title}}</view>
       </view>
-      <image class="selfTab_info_less" src="/img/arrow.svg"></image>
+      <image class="selfTab_info_right" src="/img/arrow.svg"></image>
     </view>
   </view> 
 </view>

@@ -21,5 +21,12 @@ App({
     avatarUrl: wx.getStorageSync('avatarUrl'),
     nickName: wx.getStorageSync('nickName'),
     signature: wx.getStorageSync('signature'),
+    ddl_list : wx.getStorageSync('ddl_list'),
+    course:'',
+    taskname:'',
+    taskremark: '',
+    deadline: '',
+    type:'',
+    index:'',
   }
 })

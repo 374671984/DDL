@@ -1,1 +1,112 @@
 /* pages/allTask/allTask.wxss */
+.allTask_type{
+  position : relative;
+  top: -180rpx;
+  margin-top: 30rpx;
+  width: 95%;
+}
+.type_course_all{
+  border-radius: 15rpx;
+  background-color: RGB(153, 225, 205);
+  padding-bottom: 1rpx;
+  font-size: larger;
+}
+.type_experiment_all{
+  border-radius: 15rpx;
+  background-color: RGB(195, 185, 250);
+  padding-bottom: 1rpx;
+  font-size: larger;
+}
+.type_practice_all{
+  border-radius: 15rpx;
+  background-color: RGB(153, 213, 255);
+  padding-bottom: 1rpx;
+  font-size: larger;
+}
+.type_course_info{
+  display: flex;
+  padding: 30rpx 25rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.type_experiment_info{
+  display: flex;
+  padding: 30rpx 25rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.type_practice_info{
+  display: flex;
+  padding: 30rpx 25rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.item_type_img_right{
+  width: 30rpx;
+  height: 30rpx;
+  transform: rotate(0deg);
+  margin-top: 5%;
+}
+.type_img_right{
+  width: 30rpx;
+  height: 30rpx;
+  transform: rotate(0deg);
+}
+.type_img_down{
+  width: 30rpx;
+  height: 30rpx;
+  transform: rotate(90deg);
+}
+
+.line {
+  width: 95%;
+  margin: 0 auto;
+  height: 2rpx;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.item_course{
+  background-color: RGB(153, 225, 205);
+  padding: 30rpx 25rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+}
+.item_experiment{
+  background-color: RGB(195, 185, 250);
+  padding: 30rpx 25rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+}
+.item_practice{
+  background-color: RGB(153, 213, 255);
+  padding: 30rpx 25rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+}
+.course_name{
+  font-size: larger;
+}
+.experiment_name{
+  font-size: larger;
+}
+.practice_name{
+  font-size: larger;
+}
+.item_course_item{
+  font-size: 27rpx;
+
+}
+.item_experiment_item{
+  font-size: 27rpx;
+
+}
+.item_practice_item{
+  font-size: 27rpx;
+
+}

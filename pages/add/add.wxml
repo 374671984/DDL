@@ -1,47 +1,67 @@
 <!--pages/add/add.wxml-->
-<navigator >测试用（跳转任务页面）</navigator>
-<view class="title">添加新任务</view>
-<view class="inputview">
-  <input class="inputText" placeholder="课程名称" bindinput="getCourse" />
-</view>
-<view class="inputview">
-  <input class="inputText" placeholder="任务名称" bindinput="getTaskname" />
-</view>
-<view class="inputview1">
-  <input class="inputText" placeholder="输入任务备注" bindinput="getTaskremark" />
-</view>
-<view class="calendar">
-  <van-cell title="截止日期" value="{{ date }}" bind:click="onDisplay" />
+<div bindtap="gotoAllTask">
+  <span class="gotoAllTask" >查看所有任务</span>
+  <div class="liquid"></div>
+</div>
+
+<scroll-view class="creat">
+  <view class="title">添加新任务</view>
+  <view class="inputview">
+    <input class="inputText" value="{{Course}}" disabled="true" placeholder="选择任务相应课程" bindtap="showPopup" />
+    <van-icon name="add" style="margin-left:140rpx;" bindtap="showPopup" />
+    <van-popup custom-style="width:80%;height:85%" show="{{ showPop }}" bind:close="onClosePop">
+      <van-picker show-toolbar title="选择课程" bind:cancel="onCancelCourse" bind:confirm="onConfirmCourse"columns="{{ courseList }}" bind:change="onChange" />
+    </van-popup>
+  </view>
+  <view class="inputview">
+    <input class="inputText" placeholder="输入任务名称" bindinput="getTaskname" />
+  </view>
+  <view class="inputview1">
+    <input class="inputText" placeholder="输入任务备注" bindinput="getTaskremark" />
+  </view>
+  <view class="calendar">
+  <van-cell style="width: 400rpx;" title="截止日期" value="{{ date }}" bind:click="onDisplay" />
+  <van-icon style="position: absolute; right: 20rpx; top: 28rpx;"  name="clock" bind:click="onDisplay" />
   <van-calendar show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" color="#07c160" />
 </view>
-<view class="inputview">
-  <view class="lab">
-    <label>任务提醒</label>
+  <view class="inputview">
+    <view class="lab">
+      <label>任务提醒</label>
+    </view>
+    <view>
+      <switch type="checkebox" checked="{{isChecked_warn}}" bind:change="onChange_warn"></switch>
+    </view>
   </view>
-  <view>
-    <switch type="checkebox" checked="{{isChecked_warn}}" bind:change="onChange_warn"></switch>
+  <view class="inputview">
+    <view class="lab">
+      <label>同步给同课程其他学生</label>
+    </view>
+    <view>
+      <switch type="checkebox" checked="{{isChecked_syn}}" bind:change="onChange_syn"></switch>
+    </view>
   </view>
-</view>
-<view class="inputview">
-  <view class="lab">
-    <label>同步给同课程其他学生</label>
-  </view>
-  <view>
-    <switch type="checkebox" checked="{{isChecked_syn}}" bind:change="onChange_syn"></switch>
-  </view>
-</view>
 
-<view class="radio">
-  <view class="radio_text">
-    <text>任务类型</text>
-  </view>
-  <van-radio-group value="{{ radio }}" bind:change="onChange1" direction="horizontal">
-    <van-radio name="1" shape="square">课程作业</van-radio>
-    <van-radio name="2" shape="square">实验</van-radio>
-    <van-radio name="3" shape="square">实践作业</van-radio>
-  </van-radio-group>
-</view>
+  <view class="radio">
+    <view class="radio_option">
 
-<view class="button">
-  <button type="primary" bindtap="submit">创建任务</button>
-</view>
+      <view class="page-section">
+        <view class="page-section-title">任务类型</view>
+        <radio-group bindchange="onChange1" style="display: flex;">
+          <label class="course" ><radio value="1" shape="square">课程作业</radio></label>
+          <label class="experiment"><radio value="2" shape="square">实验</radio></label>
+          <label class="practice" ><radio value="3" shape="square">实践作业</radio></label> 
+        </radio-group>
+      </view>
+
+      <!-- <van-radio-group value="{{ radio }}" bind:change="onChange1" direction="horizontal" >
+        <view class="course"><van-radio name="1" shape="square">课程作业</van-radio></view>
+        <view class="experiment"><van-radio name="2" shape="square">实验</van-radio></view>
+        <view class="practice"><van-radio name="3" shape="square">实践作业</van-radio></view> 
+      </van-radio-group> -->
+    </view>
+  </view>
+
+  <view class="button">
+    <button type="primary" bindtap="submit">创建任务</button>
+  </view>
+</scroll-view>

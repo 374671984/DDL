@@ -1,2 +1,22 @@
 <!--pages/self/forUs/forUs.wxml-->
-<text>pages/self/forUs/forUs.wxml</text>
+
+<div>
+  <span>帮助与说明</span>
+  <div class="liquid"></div>
+</div>
+
+
+<scroll-view class="list" style="height: 1208rpx" scroll-y="true" bindscrolltoupper="refresh" bindscrolltolower="loadMore">
+
+  <div class="card">
+    <span>1.扫码后日期可能显示null,无法显示课程,点击第x周就能显示</span>
+   <view><text>\n</text></view>
+    <span>2.点击右上角（三个点）,有一个添加到桌面,就能把小程序设置成桌面应用</span>
+    <view><text>\n</text></view>
+    <span>3.如果期间,存在BUG或者课程信息不正确,请点击右上角（三个点)反馈与投诉,反馈给我</span>
+  
+  </div>
+
+</scroll-view>
+
+
