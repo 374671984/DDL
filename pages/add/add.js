@@ -20,6 +20,7 @@ Page({
     radio: '1',
     ddlList: [],
     type:'',
+    courseList:[],
   },
   onLoad(){
     if(app.globalData.ddl_list){
@@ -82,7 +83,8 @@ Page({
         checked: detail,
         isChecked_warn: detail.value
       }
-    )
+    ),
+    console.log(this.data.isChecked_warn)
   },
   onChange_syn({ detail }) {
     // 需要手动对 checked 状态进行更新
@@ -167,7 +169,8 @@ Page({
           deadline: this.data.date,
           Course: this.data.Course,
           taskName: this.data.taskName,
-          taskRemark: this.data.taskRemark
+          taskRemark: this.data.taskRemark,
+          isRemind : this.data.isChecked_warn
         });
         wx.showToast({
           title: '创建成功',

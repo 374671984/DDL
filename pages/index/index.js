@@ -14,6 +14,7 @@ Page({
         userInfo:app.globalData.userInfo
       })
     }
+    let list = wx.getStorageSync('list');
     if(app.globalData.userInfo){
       wx.switchTab({
         url: '../ddl/ddl'
@@ -58,19 +59,19 @@ Page({
     }
     var that = this
     wx.request({
-      url: 'https://192.168.1.148/hello',
+      url: 'http://localhost:8080/courses/user',
       data: {
-        student_id:this.data.student_id,
-        password:this.data.password,
+        Student_id:that.data.student_id,
+        Password:that.data.password,
       },
       header: {
        "Content-Type": "application/json" ,//用于post
        //"Authorization": "Bearer {{your_token}}",
       },
-      method: 'POST',
+      method: 'post',
       success: function (res) {
         console.log("res", res); 
-        if(res.data.password){
+        if(res.data.星期一){
           //console.log(res.data.data.token)
           // app.globalData.token = res.data.data.token
           //console.log(app.globalData.token)
@@ -82,9 +83,17 @@ Page({
           wx.showToast({
             title: '登陆中',
             icon: 'success',
-            duration: 15000
+            duration: 2000
           })
           console.log("登录成功")
+          
+
+              wx.setStorage({
+                data: res.data,//需要存储的内容。只支持原生类型、Date、及能
+                key: 'list',
+              })
+            
+
           //登录成功跳转页面
           wx.switchTab({
             url: '../ddl/ddl'
@@ -111,3 +120,61 @@ Page({
     
   },
 })
+
+function getCourseName(jsondata) {
+  var day1 = jsondata.星期一;
+  var day2 = jsondata.星期二;
+  var day3 = jsondata.星期三;
+  var day4 = jsondata.星期四;
+  var day5 = jsondata.星期五;
+  var day6 = jsondata.星期六;
+  var day7 = jsondata.星期日;
+  var list = [];
+  var findata = [];
+  list.push(day1);
+  list.push(day2);
+  list.push(day3);
+  list.push(day4);
+  list.push(day5);
+  list.push(day6);
+  list.push(day7);
+
+  let arrin = 0;
+  let colorid = 1;
+  let arr = [];
+  let courseSet = new Set();
+  let teacherSet = new Set();
+  for (let i = 0; i < 7; i++) {
+   
+    let tmp = list[i];
+    let coureprename = '';
+    
+    for (let index = 0; index < 11; index++) {
+    //     { "id":1,"isToday": 5, "jie": 3, "classNumber": 2, "name": "算法设计与分析" ,"address":"5506" },],
+      let ma = new Map();
+      let mabuf = new Map();
+      ma[index] = strHandle(JSON.stringify(tmp[index])) ;
+       
+      let acourse = {};
+      acourse["id"] = colorid;
+      acourse["isToday"] = i;
+      acourse["jie"] = index + 1;
+      acourse["classNumber"] = 1;
+      let coursename = String(ma[index].get('courseName'));    
+      courseSet.add(coursename);
+      if(coursename != "\"}")
+      {
+        mabuf = map[index].get('class0');
+        let teacher = mabuf.get('教师');
+        let teandcou = coursename + teacher;
+        teacherSet.add(teandcou);
+        console.log(teacherSet);
+      }    
+    }
+
+  }
+  arr[0] = courseSet;
+  arr[1] = teacherSet;
+  return arr;
+
+}

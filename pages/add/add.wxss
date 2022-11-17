@@ -88,7 +88,7 @@ div .liquid::after,
   border-radius: 60rpx;
   margin-left: 5rpx;
 
-  background: #F6F6F6;
+  background: white;
   box-shadow: 0rpx 15rpx 15rpx 30rpx #bebebe,
   -15rpx -15rpx 30rpx #ffffff;
 }
@@ -132,6 +132,8 @@ div .liquid::after,
 }
 
 .calendar {
+  display: flex;
+  position: relative;
   margin-top: 2%;
   margin-left: 12%;
   width: 75%;

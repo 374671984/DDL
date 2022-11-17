@@ -1,1 +1,55 @@
 /* pages/remind/remind.wxss */
+.remind{
+  position : relative;
+  top: 0rpx;
+  left: 20rpx;
+  margin-top: 30rpx;
+  width: 95%;
+}
+
+.type_img_right{
+  width: 30rpx;
+  height: 30rpx;
+  transform: rotate(0deg);
+}
+/* 课程作业 */
+.type_course{
+  border-radius: 15rpx;
+  background-color: RGB(153, 225, 205);
+  font-size: larger;
+  display: flex;
+  padding: 30rpx 25rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.course_item{
+  font-size: 27rpx;
+}
+
+/* 实验 */
+.type_experiment{
+  border-radius: 15rpx;
+  background-color: RGB(195, 185, 250);
+  font-size: larger;
+  display: flex;
+  padding: 30rpx 25rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.experiment_item{
+  font-size: 27rpx;
+}
+
+/* 实践作业 */
+.type_practice{
+  border-radius: 15rpx;
+  background-color: RGB(153, 213, 255);
+  font-size: larger;
+  display: flex;
+  padding: 30rpx 25rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.practice_item{
+  font-size: 27rpx;
+}

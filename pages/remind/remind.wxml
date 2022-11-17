@@ -1,2 +1,95 @@
 <!--pages/remind/remind.wxml-->
-<text>pages/remind/remind.wxml</text>
+<!--pages/remind/remind.wxml-->
+<van-tabs active="{{ active }}" bind:change="onChange" sticky color="#74CA00" type="card">
+  <!-- 提醒任务 -->
+  <van-tab title="提醒任务" >
+    <view class="remind" wx:for="{{ddlList}}" wx:key="remind" wx:for-item="item">
+          <view class="remind_info" data-remindindex="{{index}}" bindtap="onClick_remind_item" data-course="{{item.Course}}" data-taskname="{{item.taskName}}" data-taskremark="{{item.taskRemark}}" data-deadline="{{item.deadline}}" data-type="{{item.type}}">
+            <!-- 将数组里面的课程作业绘制出来 -->
+            <view wx:if="{{item.isRemind === true}}">
+
+              <view wx:if="{{item.type==='课程作业'}}" class="type_course">  
+                  <view class="course_contain">
+                    <view class="course_name">{{item.Course}}</view>
+                    <view class="course_item">
+                      <view class="task_name">{{item.taskName}}</view>
+                      <view class="deadline">{{item.deadline}}</view>
+                    </view>
+                  </view>
+                  <image class="type_img_right" src="/img/arrow.svg"></image>
+              </view>
+
+              <view wx:if="{{item.type==='实验'}}" class="type_experiment">  
+                  <view class="experiment_contain">
+                    <view class="experiment_name">{{item.Course}}</view>
+                    <view class="experiment_item">
+                      <view class="task_name">{{item.taskName}}</view>
+                      <view class="deadline">{{item.deadline}}</view>
+                    </view>
+                  </view>
+                  <image class="type_img_right" src="/img/arrow.svg"></image>
+              </view>
+
+              <view wx:if="{{item.type==='实践作业'}}" class="type_practice">  
+                  <view class="practice_contain">
+                    <view class="practice_name">{{item.Course}}</view>
+                    <view class="practice_item">
+                      <view class="task_name">{{item.taskName}}</view>
+                      <view class="deadline">{{item.deadline}}</view>
+                    </view>
+                  </view>
+                  <image class="type_img_right" src="/img/arrow.svg"></image>
+              </view>
+
+            </view>
+          </view>
+        </view>
+
+  </van-tab>
+  <!-- 未提醒任务 -->
+  <van-tab title="未提醒任务" >
+    <view class="remind" wx:for="{{ddlList}}" wx:key="remind" wx:for-item="item">
+          <view class="remind_info" data-remindindex="{{index}}" bindtap="onClick_remind_item" data-course="{{item.Course}}" data-taskname="{{item.taskName}}" data-taskremark="{{item.taskRemark}}" data-deadline="{{item.deadline}}" data-type="{{item.type}}">
+            <!-- 将数组里面的课程作业绘制出来 -->
+            <view wx:if="{{item.isRemind === false}}">
+            
+              <view wx:if="{{item.type==='课程作业'}}" class="type_course">  
+                  <view class="course_contain">
+                    <view class="course_name">{{item.Course}}</view>
+                    <view class="course_item">
+                      <view class="task_name">{{item.taskName}}</view>
+                      <view class="deadline">{{item.deadline}}</view>
+                    </view>
+                  </view>
+                  <image class="type_img_right" src="/img/arrow.svg"></image>
+              </view>
+
+              <view wx:if="{{item.type==='实验'}}" class="type_experiment">  
+                  <view class="experiment_contain">
+                    <view class="experiment_name">{{item.Course}}</view>
+                    <view class="experiment_item">
+                      <view class="task_name">{{item.taskName}}</view>
+                      <view class="deadline">{{item.deadline}}</view>
+                    </view>
+                  </view>
+                  <image class="type_img_right" src="/img/arrow.svg"></image>
+              </view>
+
+              <view wx:if="{{item.type==='实践作业'}}" class="type_practice">  
+                  <view class="practice_contain">
+                    <view class="practice_name">{{item.Course}}</view>
+                    <view class="practice_item">
+                      <view class="task_name">{{item.taskName}}</view>
+                      <view class="deadline">{{item.deadline}}</view>
+                    </view>
+                  </view>
+                  <image class="type_img_right" src="/img/arrow.svg"></image>
+              </view>
+
+            </view>
+          </view>
+        </view>
+  </van-tab>
+</van-tabs>
+
+

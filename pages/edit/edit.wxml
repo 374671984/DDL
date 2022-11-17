@@ -4,7 +4,7 @@
 <view class="inputview">
   <input class="inputText" value="{{Course}}" disabled="true" placeholder="选择任务相应课程" bindtap="showPopup" />
   <van-icon name="records" style="margin-left:140rpx;" bindtap="showPopup" />
-  <van-popup show="{{ showPop }}" bind:close="onClosePop">
+  <van-popup custom-style="width:80%;height:70%" show="{{ showPop }}" bind:close="onClosePop">
     <van-picker show-toolbar title="选择课程" bind:cancel="onCancelCourse" bind:confirm="onConfirmCourse"columns="{{ courseList }}" bind:change="onChange" />
   </van-popup>
 </view>

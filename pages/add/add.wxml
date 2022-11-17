@@ -8,8 +8,8 @@
   <view class="title">添加新任务</view>
   <view class="inputview">
     <input class="inputText" value="{{Course}}" disabled="true" placeholder="选择任务相应课程" bindtap="showPopup" />
-    <van-icon name="add" style="margin-left:140rpx;" bindtap="showPopup" />
-    <van-popup custom-style="width:80%;height:85%" show="{{ showPop }}" bind:close="onClosePop">
+    <van-icon name="add" style="position: absolute; right: 100rpx; top: 105rpx;" bindtap="showPopup" />
+    <van-popup custom-style="width:100%;height:100%" show="{{ showPop }}" bind:close="onClosePop">
       <van-picker show-toolbar title="选择课程" bind:cancel="onCancelCourse" bind:confirm="onConfirmCourse"columns="{{ courseList }}" bind:change="onChange" />
     </van-popup>
   </view>
@@ -20,10 +20,10 @@
     <input class="inputText" placeholder="输入任务备注" bindinput="getTaskremark" />
   </view>
   <view class="calendar">
-  <van-cell style="width: 400rpx;" title="截止日期" value="{{ date }}" bind:click="onDisplay" />
-  <van-icon style="position: absolute; right: 20rpx; top: 28rpx;"  name="clock" bind:click="onDisplay" />
-  <van-calendar show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" color="#07c160" />
-</view>
+    <van-cell style="width: 430rpx;margin-left: 15rpx;" title="截止日期" value="{{ date }}" bind:click="onDisplay" />
+    <van-icon style="position: absolute; right: 20rpx; top: 28rpx;"  name="clock" bind:click="onDisplay" />
+    <van-calendar show="{{ show }}" bind:close="onClose" bind:confirm="onConfirm" color="#07c160" />
+  </view>
   <view class="inputview">
     <view class="lab">
       <label>任务提醒</label>

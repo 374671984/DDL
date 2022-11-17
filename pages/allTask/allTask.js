@@ -53,7 +53,7 @@ Page({
 // 点击类型里面的课程的跳转函数
 onClick_allTask_item(e){
    this.setData({
-    item_index : e.currentTarget.dataset.itemindex,
+    course_index : e.currentTarget.dataset.itemindex,
     course : e.currentTarget.dataset.course,
     taskname : e.currentTarget.dataset.taskname,
     taskremark : e.currentTarget.dataset.taskremark,
@@ -65,8 +65,8 @@ onClick_allTask_item(e){
    app.globalData.taskremark = this.data.taskremark
    app.globalData.deadline = this.data.date
    app.globalData.type = this.data.type
-   app.globalData.index = this.data.item_index
-   console.log(this.data.item_index)
+   app.globalData.index = this.data.course_index
+   console.log(this.data.course_index)
    console.log(e.currentTarget.dataset.itemindex)
    console.log(app.globalData.course)
    console.log(app.globalData.taskname)

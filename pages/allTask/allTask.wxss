@@ -100,13 +100,10 @@
 }
 .item_course_item{
   font-size: 27rpx;
-
 }
 .item_experiment_item{
   font-size: 27rpx;
-
 }
 .item_practice_item{
   font-size: 27rpx;
-
 }

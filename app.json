@@ -6,7 +6,6 @@
     "pages/add/add",
     "pages/remind/remind",
     "pages/self/self",
-    "pages/logs/logs",
     "pages/self/forUs/forUs",
     "pages/allTask/allTask",
     "pages/self/setting/setting",
@@ -73,6 +72,11 @@
     "van-tabbar": "./miniprogram/miniprogram_npm/@vant/weapp/tabbar/index",
     "van-tabbar-item": "./miniprogram/miniprogram_npm/@vant/weapp/tabbar-item/index",
     "van-sidebar": "./miniprogram/miniprogram_npm/@vant/weapp/sidebar/index",
-    "van-sidebar-item": "./miniprogram/miniprogram_npm/@vant/weapp/sidebar-item/index"
+    "van-sidebar-item": "./miniprogram/miniprogram_npm/@vant/weapp/sidebar-item/index",
+    "van-icon": "./miniprogram/miniprogram_npm/@vant/weapp/icon/index",
+    "van-popup": "./miniprogram/miniprogram_npm/@vant/weapp/popup/index",
+    "van-picker": "./miniprogram/miniprogram_npm/@vant/weapp/picker/index",
+    "van-tab": "./miniprogram/miniprogram_npm/@vant/weapp/tab/index",
+    "van-tabs": "./miniprogram/miniprogram_npm/@vant/weapp/tabs/index"
   }
 }
